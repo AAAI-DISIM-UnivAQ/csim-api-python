@@ -58,6 +58,7 @@ except:
     print ('appropriately adjust the file "vrep.py"')
     print ('----------------------------------------------------')
     print ('')
+    exit(-1)
 
 #ctypes wrapper prototypes 
 c_GetJointPosition          = ct.CFUNCTYPE(ct.c_int32,ct.c_int32, ct.c_int32, ct.POINTER(ct.c_float), ct.c_int32)(("simxGetJointPosition", libsimx))
