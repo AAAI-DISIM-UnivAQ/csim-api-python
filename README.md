@@ -8,7 +8,7 @@ Simple python binding for
 0. Requirements: CPython version >= 3.5.2, pip
 1. Install library from PyPI by entering this command:
 ```bash
-[sudo] pip install 'git+https://github.com/Troxid/vrep-api-python'
+[sudo] pip install 'git+https://github.com/AAAI-DISIM-UnivAQ/vrep-api-python.git'
 ```
 
 ## V-Rep specific
