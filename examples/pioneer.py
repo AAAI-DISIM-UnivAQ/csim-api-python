@@ -10,6 +10,7 @@ class PioneerP3DX:
         self._right_motor = api.joint.with_velocity_control("Pioneer_p3dx_rightMotor")
         self._left_sensor = api.sensor.proximity("Pioneer_p3dx_ultrasonicSensor3")
         self._right_sensor = api.sensor.proximity("Pioneer_p3dx_ultrasonicSensor6")
+        self._debug_shape = api.shape.primitive("debug")
 
     def rotate_right(self, speed=2.0):
         self._set_two_motor(speed, -speed)

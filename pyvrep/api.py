@@ -3,6 +3,7 @@ from .common import ReturnCommandError
 from .joints import Joints
 from .sensors import Sensors
 from .simulationstate import SimulationState
+from .shapes import Shapes
 
 
 class VRepApi:
@@ -12,6 +13,8 @@ class VRepApi:
         self.joint = Joints(id)  # type: Joints
         self.sensor = Sensors(id)  # type: Sensors
         self.simulation = SimulationState(id)  # type: SimulationState
+        self.shape = Shapes(id)  # type : Shape
+
 
     @staticmethod
     def connect(ip, port):

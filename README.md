@@ -41,7 +41,8 @@ Basically implemented those components that are required to control the robot:
 * Proximity sensor
 * Vision sensor
 * Force sensor
-* Position sensor (used for that dummy or shape object)
+* Position sensor
+* Shape primitive object handle (used for shape object)
 * ~~Remote function calls~~
 
 ## Example
