@@ -98,7 +98,7 @@ with VRep.connect("127.0.0.1", 19997) as api:
 
 
 ## License
-Copyright (C) 2016-2017  Stanislav Eprikov, Pavel Pletenev 
+Copyright (C) 2016-2019  Stanislav Eprikov, Pavel Pletenev, Giovanni De Gasperis
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
