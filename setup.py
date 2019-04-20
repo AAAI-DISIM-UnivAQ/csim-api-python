@@ -9,7 +9,7 @@ setup(
     author='giodegas',
     author_email='giovanni@giodegas.it',
     license='MIT',
-    keywords='vrep robotics simulator binding api',
+    keywords='V-REP virtual robotics simulator binding api',
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Intended Audience :: Developers',
