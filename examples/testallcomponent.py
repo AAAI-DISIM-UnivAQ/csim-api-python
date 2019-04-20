@@ -1,5 +1,5 @@
 import time
-from pyrep import VRep
+from pyvrep import VRep
 from math import *
 # contextlib
 # simpy

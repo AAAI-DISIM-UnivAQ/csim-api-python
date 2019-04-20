@@ -1,5 +1,5 @@
-from pyrep import VRep
-from pyrep.sensors import VisionSensor
+from pyvrep import VRep
+from pyvrep.sensors import VisionSensor
 import time
 
 class PioneerP3DX:

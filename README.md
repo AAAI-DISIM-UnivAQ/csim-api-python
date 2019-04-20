@@ -1,7 +1,7 @@
 # v-rep python
 
 Simple python binding for
-[Coppelia Robotics V-REP simulator](http://www.coppeliarobotics.com/) ([remote API](http://www.coppeliarobotics.com/helpFiles/en/remoteApiOverview.htm)) of version **3.5.0 rev4**
+[Coppelia Robotics V-REP simulator](http://www.coppeliarobotics.com/) ([remote API](http://www.coppeliarobotics.com/helpFiles/en/remoteApiOverview.htm)) of version **3.6.1 (rev3)**
 
 ## Getting started
 
@@ -12,9 +12,23 @@ Simple python binding for
 ```
 
 ## V-Rep specific
-Package needs platform-specific native library (remoteApi). It uses two enviroment variables `VREP` and `VREP_LIBRARY`. If `VREP` is unspecified package will use default `/usr/share/vrep` for it. If `VREP_LIBRARY` is also unspecified, then it will concatenate `VREP` with `programming/remoteApiBindings/lib/lib/64Bit/`. This setup was test tested under **LINUX ONLY**. We are open for debug under Windows.
-    * For windows users:
-        *NOT TESTED*
+Package needs platform-specific native library (remoteApi). 
+It uses two enviroment variables `VREP` and `VREP_LIBRARY`. 
+If `VREP` is unspecified package will use default `/usr/share/vrep` for it. 
+If `VREP_LIBRARY` is also unspecified, then it will concatenate `VREP` with `programming/remoteApiBindings/lib/lib/64Bit/`. 
+This setup is tested and develoed under **LINUX ONLY**. Mac users should not have problems.
+
+To have everything in `/usr/share/vrep` :
+
+    sudo mkdir /usr/share/vrep
+    sudo cp <V-REP dir>programming/remoteApiBindings/lib/lib/Linux/64Bit/*.so /usr/share/vrep/.
+    sudo cp <V-REP dir>programming/remoteApiBindings/python/vrep*.py /usr/share/vrep/.
+    
+* For windows users:
+
+    _NOT TESTED_
+
+We are open for contributions to debug it under Windows.
     
 To use package you will need the socket port number, which can be located in `V-REP/remoteApiConnections.txt`.
 

@@ -1,13 +1,13 @@
 from setuptools import setup
 
 setup(
-    name='pyrep',
-    packages=['pyrep', 'pyrep.vrep'],
-    version='0.2.0',
-    description='Simple python binding for V-REP robotics simulator',
-    url='https://github.com/Troxid/vrep-api-python',
-    author='troxid',
-    author_email='troxid@yandex.ru',
+    name='pyvrep',
+    packages=['pyvrep', 'pyvrep.vrep'],
+    version='0.2.1',
+    description='Simple Python binding for V-REP robotics simulator',
+    url='https://github.com/AAAI-DISIM-UnivAQ/vrep-api-python',
+    author='giodegas',
+    author_email='giovanni@giodegas.it',
     license='MIT',
     keywords='vrep robotics simulator binding api',
     classifiers=[

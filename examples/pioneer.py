@@ -1,4 +1,4 @@
-from pyrep import VRep
+from pyvrep import VRep
 import time
 
 
