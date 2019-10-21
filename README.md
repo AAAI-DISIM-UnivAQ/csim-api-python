@@ -24,9 +24,20 @@ To have everything in `/usr/share/vrep` :
     sudo cp <V-REP dir>programming/remoteApiBindings/lib/lib/Linux/64Bit/*.so /usr/share/vrep/.
     sudo cp <V-REP dir>programming/remoteApiBindings/python/vrep*.py /usr/share/vrep/.
     
-* For windows users:
+### For Windows users:
 
-    _NOT TESTED_
+(_NOT TESTED ENOUGH_)
+
+define a VREP_LIBRARY environment variable pointing to your shared vrep folder which sould include the following files:
+
+    * remoteApi.dll (64bit for Windows 10)
+    * vrep.py
+    * vrepConst.py
+  
+check if the last character of the path in "\" in the environment variable value, like for example:
+    
+    C:\Users\<username>\vrep_share\
+                                  ^^
 
 We are open for contributions to debug it under Windows.
     
