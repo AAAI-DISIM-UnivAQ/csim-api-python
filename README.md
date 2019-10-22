@@ -22,7 +22,7 @@ To have everything in `/usr/share/vrep` :
 
     sudo mkdir /usr/share/vrep
     sudo cp <V-REP dir>programming/remoteApiBindings/lib/lib/Linux/64Bit/*.so /usr/share/vrep/.
-    sudo cp <V-REP dir>programming/remoteApiBindings/python/vrep*.py /usr/share/vrep/.
+    sudo cp <V-REP dir>programming/remoteApiBindings/python/python/vrep*.py /usr/share/vrep/.
 
 check if the last character of the path is "/" in the environment variable value, like for example:
 
