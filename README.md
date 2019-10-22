@@ -23,7 +23,12 @@ To have everything in `/usr/share/vrep` :
     sudo mkdir /usr/share/vrep
     sudo cp <V-REP dir>programming/remoteApiBindings/lib/lib/Linux/64Bit/*.so /usr/share/vrep/.
     sudo cp <V-REP dir>programming/remoteApiBindings/python/vrep*.py /usr/share/vrep/.
-    
+
+check if the last character of the path is "/" in the environment variable value, like for example:
+
+    export VREP_LIBRARY=/usr/share/vrep/
+                                       ^^
+                                       
 ### For Windows users:
 
 (_NOT TESTED ENOUGH_)
@@ -34,7 +39,7 @@ define a VREP_LIBRARY environment variable pointing to your shared vrep folder w
     * vrep.py
     * vrepConst.py
   
-check if the last character of the path in "\" in the environment variable value, like for example:
+check if the last character of the path is "\\" in the environment variable value, like for example:
     
     C:\Users\<username>\vrep_share\
                                   ^^
