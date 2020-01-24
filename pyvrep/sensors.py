@@ -107,6 +107,22 @@ class PositionSensor:
         return linear_velocity, angular_velocity
 
 
+class TouchSensor:
+
+    def __init__(self, id, handle, name):
+        self._name = name
+        self._id = id
+        self._handle = handle
+        self._def_op_mode = v.simx_opmode_oneshot_wait
+
+    def get_state(self) -> int:
+        """Retrieves the state of the button.
+        @rtype: int
+        """
+        int_sig, val = v.simxGetIntegerSignal(self._id, self._name, self._def_op_mode)
+        return val
+
+
 class Sensors:
 
     def __init__(self, id):
@@ -147,6 +163,13 @@ class Sensors:
                 return ForceSensor(self._id, handle)
             else:
                 raise MatchObjTypeError(name)
+        else:
+            raise NotFoundComponentError(name)
+
+    def touch(self, name: str) -> TouchSensor:
+        handle = self._get_object_handle(name)
+        if handle is not None:
+            return TouchSensor(self._id, handle, name)
         else:
             raise NotFoundComponentError(name)
 
