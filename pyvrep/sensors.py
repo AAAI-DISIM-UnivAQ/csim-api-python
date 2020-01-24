@@ -81,12 +81,12 @@ class PositionSensor:
         self._handle = handle
         self._def_op_mode = v.simx_opmode_oneshot_wait
 
-    def get_position(self) -> Vec3:
+    def get_position(self) -> list:
         """Retrieves the orientation.
         @rtype: Vec3
         """
         code, pos = v.simxGetObjectPosition(self._id, self._handle, -1, self._def_op_mode)
-        return Vec3(pos[0], pos[1], pos[2])
+        return pos
 
     def get_orientation(self) -> EulerAngles:
         """
