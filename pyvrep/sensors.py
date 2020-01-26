@@ -81,12 +81,12 @@ class PositionSensor:
         self._handle = handle
         self._def_op_mode = v.simx_opmode_oneshot_wait
 
-    def get_position(self) -> Vec3:
+    def get_position(self) -> list:
         """Retrieves the orientation.
         @rtype: Vec3
         """
         code, pos = v.simxGetObjectPosition(self._id, self._handle, -1, self._def_op_mode)
-        return Vec3(pos[0], pos[1], pos[2])
+        return pos
 
     def get_orientation(self) -> EulerAngles:
         """
@@ -105,6 +105,22 @@ class PositionSensor:
         linear_velocity = Vec3(lin_vel[0], lin_vel[1], lin_vel[2])
         angular_velocity = EulerAngles(ang_vel[0], ang_vel[1], ang_vel[2])
         return linear_velocity, angular_velocity
+
+
+class TouchSensor:
+
+    def __init__(self, id, handle, name):
+        self._name = name
+        self._id = id
+        self._handle = handle
+        self._def_op_mode = v.simx_opmode_oneshot_wait
+
+    def get_state(self) -> int:
+        """Retrieves the state of the button.
+        @rtype: int
+        """
+        int_sig, val = v.simxGetIntegerSignal(self._id, self._name, self._def_op_mode)
+        return val
 
 
 class Sensors:
@@ -147,6 +163,13 @@ class Sensors:
                 return ForceSensor(self._id, handle)
             else:
                 raise MatchObjTypeError(name)
+        else:
+            raise NotFoundComponentError(name)
+
+    def touch(self, name: str) -> TouchSensor:
+        handle = self._get_object_handle(name)
+        if handle is not None:
+            return TouchSensor(self._id, handle, name)
         else:
             raise NotFoundComponentError(name)
 
