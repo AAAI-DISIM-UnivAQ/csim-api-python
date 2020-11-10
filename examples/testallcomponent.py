@@ -1,24 +1,24 @@
 import time
-from pyvrep import VRep
+from pycsim import CSim
 from math import *
 # contextlib
 # simpy
 # multiprocessing cpu
 
 
-with VRep.connect("127.0.0.1", 19997) as vrep:
-#    vrep.simulation.stop()
+with CSim.connect("127.0.0.1", 19997) as csim:
+#    csim.simulation.stop()
 #    time.sleep(2)
-#vrep.simulation.start()
+#    csim.simulation.start()
 
-    j_vel = vrep.joint.with_velocity_control("joint_force")
-    j_pos = vrep.joint.with_position_control("joint_position")
-    j_pas = vrep.joint.passive("joint_passive")
-    j_sph = vrep.joint.spherical("sp_joint")
-    j_spr = vrep.joint.spring("joint_spring")
+    j_vel = csim.joint.with_velocity_control("joint_force")
+    j_pos = csim.joint.with_position_control("joint_position")
+    j_pas = csim.joint.passive("joint_passive")
+    j_sph = csim.joint.spherical("sp_joint")
+    j_spr = csim.joint.spring("joint_spring")
 
-    s = vrep.sensor.proximity("sensor")
-    v = vrep.sensor.vision("vision")
+    s = csim.sensor.proximity("sensor")
+    v = csim.sensor.vision("vision")
 
     j_vel.set_target_velocity(2)
     j_spr.set_target_position(2)
@@ -41,5 +41,5 @@ with VRep.connect("127.0.0.1", 19997) as vrep:
         time.sleep(0.01)
 
 
-#vrep.simulation.stop()
+# csim.simulation.stop()
 
