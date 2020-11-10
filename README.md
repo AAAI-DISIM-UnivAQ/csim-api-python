@@ -12,7 +12,7 @@ tested with version **4.1.0 (rev 1 - EDU)**
 0. Requirements: CPython version >= 3.5.2, pip
 1. Install library from PyPI by entering this command:
 ```bash
-[sudo] pip install 'git+https://github.com//AAAI-DISIM-UnivAQ/csim-api-python.git'
+[sudo] pip install git+https://github.com//AAAI-DISIM-UnivAQ/csim-api-python
 ```
 
 ## C-Sim specific
