@@ -1,4 +1,5 @@
-from .vrep import vrep as v
+from .csim import sim as s
+from .csim import simConst as sc
 from .common import ReturnCommandError
 from .joints import Joints
 from .sensors import Sensors
@@ -6,32 +7,30 @@ from .simulationstate import SimulationState
 from .shapes import Shapes
 
 
-class VRepApi:
+class CSimApi:
     def __init__(self, id):
         self._id = id
-        self._def_op_mode = v.simx_opmode_oneshot_wait
         self.joint = Joints(id)  # type: Joints
         self.sensor = Sensors(id)  # type: Sensors
         self.simulation = SimulationState(id)  # type: SimulationState
         self.shape = Shapes(id)  # type : Shape
 
-
     @staticmethod
     def connect(ip, port):
-        res = v.simxStart(
+        res = s.simxStart(
             connectionAddress=ip,
             connectionPort=port,
             waitUntilConnected=True,
             doNotReconnectOnceDisconnected=True,
             timeOutInMs=5000,
             commThreadCycleInMs=5)
-        if res == v.simx_return_ok:
-            return VRepApi(res)
+        if res == sc.simx_return_ok:
+            return CSimApi(res)
         else:
             raise ReturnCommandError(res)
             
     def close_connection(self):
-        v.simxFinish(self._id)
+        s.simxFinish(self._id)
 
     def __enter__(self):
         self.simulation.start()
@@ -40,7 +39,3 @@ class VRepApi:
     def __exit__(self, exc_type, exc_val, exc_tb):
         self.simulation.stop()
         self.close_connection()
-
-
-
-

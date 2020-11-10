@@ -1,5 +1,5 @@
 import math
-from .vrep import vrep as v
+from .csim import simConst as sc
 
 
 class Vec3:
@@ -72,19 +72,19 @@ class ReturnCommandError(Exception):
 
     def __init__(self, code):
         msg = ""
-        if code == v.simx_return_novalue_flag:
+        if code == sc.simx_return_novalue_flag:
             msg = "Input buffer doesn't contain the specified command"
-        elif code == v.simx_return_timeout_flag:
+        elif code == sc.simx_return_timeout_flag:
             msg = "Command reply not received in time for opmode_oneshot_wait operation mode"
-        elif code == v.simx_return_illegal_opmode_flag:
+        elif code == sc.simx_return_illegal_opmode_flag:
             msg = "Command doesn't support the specified operation mode"
-        elif code == v.simx_return_remote_error_flag:
+        elif code == sc.simx_return_remote_error_flag:
             msg = "Command caused an error on the server side"
-        elif code == v.simx_return_split_progress_flag:
+        elif code == sc.simx_return_split_progress_flag:
             msg = "Previous similar command not yet fully processed (applies to opmode_oneshot_split operation modes)"
-        elif code == v.simx_return_local_error_flag:
+        elif code == sc.simx_return_local_error_flag:
             msg = "Command caused an error on the client side"
-        elif code == v.simx_return_initialize_error_flag:
+        elif code == sc.simx_return_initialize_error_flag:
             msg = "simxStart was not yet called"
         else:
             msg = "Undefined return code: " + str(code)

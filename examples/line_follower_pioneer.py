@@ -1,10 +1,11 @@
-from pyvrep import VRep
-from pyvrep.sensors import VisionSensor
+from pycsim import CSim
+from pycsim.sensors import VisionSensor
 import time
+
 
 class PioneerP3DX:
 
-    def __init__(self, api: VRep):
+    def __init__(self, api: CSim):
         self._api = api
         self._left_motor = api.joint.with_velocity_control("Pioneer_p3dx_leftMotor")
         self._right_motor = api.joint.with_velocity_control("Pioneer_p3dx_rightMotor")
@@ -38,7 +39,7 @@ class PioneerP3DX:
         return average
 
 
-with VRep.connect("127.0.0.1", 19997) as api:
+with CSim.connect("127.0.0.1", 19997) as api:
     robot = PioneerP3DX(api)
     # black color      :  43
     # white-gray color : -53
