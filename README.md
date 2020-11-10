@@ -1,7 +1,9 @@
 # v-rep python
 
 Simple python binding for
-[Coppelia Robotics V-REP simulator](http://www.coppeliarobotics.com/) ([remote API](http://www.coppeliarobotics.com/helpFiles/en/remoteApiOverview.htm)), tested with version **3.6.2 (rev0)**
+[Coppelia SIM Robotics simulator](http://www.coppeliarobotics.com/) 
+([remote API](http://www.coppeliarobotics.com/helpFiles/en/remoteApiOverview.htm)), 
+tested with version **4.1.0 (rev 1 - EDU)**
 
 ## Getting started
 
@@ -64,12 +66,12 @@ Basically implemented those components that are required to control the robot:
 ## Example
 Designed to be used with `examples/Pioneer.ttt`.
 ```python
-from pycsim import Csim
+from pycsim import CSim
 import time
 
 class PioneerP3DX:
 
-    def __init__(self, api: VRep):
+    def __init__(self, api: CSim):
         self._api = api
         self._left_motor = api.joint.with_velocity_control("Pioneer_p3dx_leftMotor")
         self._right_motor = api.joint.with_velocity_control("Pioneer_p3dx_rightMotor")
@@ -98,7 +100,7 @@ class PioneerP3DX:
     def left_length(self):
         return self._left_sensor.read()[1].distance()
 
-with Csim.connect("127.0.0.1", 19997) as api:
+with CSim.connect("127.0.0.1", 19997) as api:
     r = PioneerP3DX(api)
     while True:
         rl = r.right_length()
@@ -115,7 +117,7 @@ with Csim.connect("127.0.0.1", 19997) as api:
 
 
 ## License
-Copyright (C) 2016-2019  Stanislav Eprikov, Pavel Pletenev, Giovanni De Gasperis
+Copyright (C) 2016-2020  Stanislav Eprikov, Pavel Pletenev, Giovanni De Gasperis
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
