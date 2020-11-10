@@ -1,4 +1,6 @@
-# v-rep python
+# CSim python
+
+## A Python 3.x wrapper for the Coppelia Robotics Remote API
 
 Simple python binding for
 [Coppelia SIM Robotics simulator](http://www.coppeliarobotics.com/) 
