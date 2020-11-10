@@ -1,5 +1,5 @@
 import math
-from .csim import simConst as sc
+import simConst as sc
 
 
 class Vec3:

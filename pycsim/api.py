@@ -1,5 +1,5 @@
-from .csim import sim as s
-from .csim import simConst as sc
+import sim as s
+import simConst as sc
 from .common import ReturnCommandError
 from .joints import Joints
 from .sensors import Sensors
