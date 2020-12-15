@@ -25,7 +25,7 @@ This setup is tested and develoed under **LINUX ONLY**. Mac users should not hav
 To have everything in `/usr/share/csim` :
 
     sudo mkdir /usr/share/csim
-    sudo cp <CSIM dir>programming/remoteApiBindings/lib/lib/Linux/64Bit/*.so /usr/share/csim/.
+    sudo cp <CSIM dir>programming/remoteApiBindings/lib/lib/Ubuntu18_04/*.so /usr/share/csim/.
     sudo cp <CSIM dir>programming/remoteApiBindings/python/python/sim*.py /usr/share/csim/.
 
 check if the last character of the path is "/" in the environment variable value, like for example:
